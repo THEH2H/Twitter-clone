@@ -7,7 +7,7 @@ Template.tweetFeed.onCreated(function() {
 
 Template.tweetFeed.helpers({
     'tweetMessage': function() {
-        return Tweets.find({}, {
+        return Tweets.find({ parent_id: { $exists: false } }, {
             sort: { timestamp: -1 },
             limit: 10
         });

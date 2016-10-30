@@ -35,5 +35,5 @@ Meteor.publish('followers', function(username) {
 });
 
 Meteor.publish('replies', function(tweet_id) {
-    return Replies.find({ tweet_id: tweet_id });
+    return Tweets.find({ parent_id: tweet_id });
 });

@@ -9,7 +9,7 @@ Template.followUsers.onCreated(function() {
 Template.userManagement.helpers({
     'tweets': function() {
         if (Meteor.user()) {
-            return Tweets.find({ user: Meteor.user().username }).count();
+            return Tweets.find({ user: Meteor.user().username, parent_id: { $exists: false } }).count();
         }
     },
 

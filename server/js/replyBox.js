@@ -1,13 +1,12 @@
 Meteor.methods({
-    insertTweet: function(tweet) {
+    insertReply: function(message, tweet_id) {
         if (Meteor.user()) {
             Tweets.insert({
-                message: tweet,
+                message: message,
+                parent_id: tweet_id,
                 user: Meteor.user().username,
                 timestamp: new Date()
             });
         }
     }
 });
-
-

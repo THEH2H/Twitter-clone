@@ -93,3 +93,10 @@
     margin: 30px;
     margin-left: 10px;
 }
+
+.likes-container .blue{
+    color: blue;
+}
+.likes-container .black{
+    color: black;
+}

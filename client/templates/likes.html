@@ -1,3 +1,5 @@
 <template name="likes">
-    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    <div class="likes-container">
+        <a class="toggle-like"><span class="glyphicon glyphicon-heart {{#if liked}} blue {{ else }} black {{/if}}" aria-hidden="true"></span></a> {{NofLikes}}
+    </div>
 </template>
