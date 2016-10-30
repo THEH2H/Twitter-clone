@@ -1,8 +1,9 @@
 <template name="replyBox">
+    <a class="show-box">Reply</a> {{#if showBox}}
     <form>
         <div class="form-group">
-            <label for="message">Reply</label>
             <input type="text" class="form-control" id="message" placeholder="Write reply here...">
         </div>
     </form>
+    {{/if }}
 </template>

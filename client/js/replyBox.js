@@ -1,3 +1,13 @@
+Template.replyBox.onCreated(function() {
+    this.showBox = new ReactiveVar(false);
+})
+
+Template.replyBox.helpers({
+    'showBox': function() {
+        return Template.instance().showBox.get();
+    }
+})
+
 Template.replyBox.events({
     'submit form': function(event, template) {
         event.preventDefault();
@@ -7,5 +17,8 @@ Template.replyBox.events({
         if (Meteor.user()) {
             Meteor.call('insertReply', message, tweet_id);
         }
+    },
+    'click .show-box': function(event, template) {
+        template.showBox.set(!template.showBox.get());
     }
 })
