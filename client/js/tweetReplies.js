@@ -6,6 +6,9 @@ Template.tweetReplies.onCreated(function() {
 
 Template.tweetReplies.helpers({
     'tweetReply': function() {
-        return Tweets.find({ parent_id: Template.parentData()._id });
+        return Tweets.find({ parent_id: Template.parentData()._id }, {
+            sort: { timestamp: 1 },
+            limit: 10
+        });
     }
 })

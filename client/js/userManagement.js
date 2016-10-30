@@ -29,7 +29,8 @@ Template.userManagement.helpers({
 
 
 Template.userManagement.events({
-    'click #signup': function() {
+    'click #signup': function(event) {
+        event.preventDefault();
         var user = {
             username: $('#signup-username').val(),
             password: $('#signup-password').val(),
@@ -38,15 +39,20 @@ Template.userManagement.events({
             }
         };
 
-        Accounts.createUser(user, function(error) {
-            if (error) alert(error);
-        });
+        if (/^[A-Z0-9'.1234z_%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(user.username)) {
+            Accounts.createUser(user, function(error) {
+                if (error) alert(error);
+            });
+        } else {
+            alert('Please provide a valid email');
+        }
     },
     'click #login': function() {
+        event.preventDefault();
         var username = $('#login-username').val();
         var password = $('#login-password').val();
 
-        Meteor.loginWithPassword(username, password, function(error) {
+        Meteor.loginWithPassword({ username: username }, password, function(error) {
             if (error) alert(error);
         });
     },
