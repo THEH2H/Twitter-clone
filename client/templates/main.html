@@ -3,30 +3,24 @@
 </head>
 
 <body>
-{{> navBar}}
-    
-    <div class="row">
+    {{> navBar}}
+    <div class="container-fluid">
         {{#unless currentUser}}
-        <div class="col-xs-4 col-xs-offset-4">
-            {{> userManagement}}
-        </div>
-        {{/unless}} {{#if currentUser}}
-        <div class="col-xs-4">
-            <div class="row">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
                 {{> userManagement}}
             </div>
-            <div class="row">
-                {{> followUsers}}
-            </div>
         </div>
-        <div class="col-xs-8">
-            <div class="row">
-                {{> tweetBox}}
-            </div>
-            <div class="row">
-                {{> tweetFeed}}
-            </div>
+        {{else}}
+        <div class="row">
+            {{> followUsers}}
         </div>
-        {{/if}}
+        <div class="row">
+            {{> tweetBox}}
+        </div>
+        <div class="row">
+            {{> tweetFeed}}
+        </div>
+        {{/unless}}
     </div>
 </body>

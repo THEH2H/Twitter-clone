@@ -23,3 +23,4 @@ accounts-ui
 accounts-password
 reywood:publish-composite
 email
+momentjs:moment@=2.15.1

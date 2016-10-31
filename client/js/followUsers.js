@@ -7,8 +7,12 @@ Template.followUsers.onCreated(function() {
     if (Meteor.user()) {
         this.subscribe('users', Meteor.user().emails[0].address)
         this.subscribe('followings', Meteor.user().emails[0].address);
+        this.subscribe('followers', Meteor.user().emails[0].address);
+        this.subscribe('tweets', Meteor.user().emails[0].address);
     }
 });
+
+
 
 Template.followUsers.helpers({
     'foundUser': function() {

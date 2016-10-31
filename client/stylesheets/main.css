@@ -1,8 +1,7 @@
 /* CSS declarations go here */
 
 .tweetbox-container {
-    margin: 30px;
-    margin-left: 10px;
+    margin: 20px;
 }
 
 .tweetbox,
@@ -21,6 +20,12 @@
     color: gray;
 }
 
+.tweetbox-container .panel-body .title {
+    text-align: center;
+    margin-top: 0;
+    color: rgb(119, 119, 119);
+}
+
 .tweetbox .errCharCount {
     margin-right: 10px;
     color: red;
@@ -34,24 +39,6 @@
 .user-container h4 {
     color: gray;
     text-align: center;
-}
-
-.user-container .table {
-    margin-top: 10px;
-}
-
-.user-container .table th,
-.table td {
-    border-top: none;
-}
-
-.user-container .tableHeader {
-    color: gray;
-}
-
-.user-container .tableContent {
-    color: rgb(117, 187, 251);
-    font-size: 150%;
 }
 
 .user-container .fullbutton {
@@ -71,8 +58,7 @@
 }
 
 .follow-container {
-    margin-top: 30px;
-    margin-left: 30px;
+    margin: 20px;
 }
 
 .follow-container .found-user {
@@ -85,13 +71,38 @@
     color: gray;
 }
 
+.follow-container .panel-body .title {
+    text-align: center;
+    margin-top: 0;
+    color: rgb(119, 119, 119);
+}
+
 .tweetfeed {
     background-color: rgb(240, 247, 254);
 }
 
 .tweetfeed-container {
-    margin: 30px;
-    margin-left: 10px;
+    margin: 20px;
+}
+
+.tweetfeed-container .well {
+    margin-top: 30px;
+}
+
+.tweetfeed-container .panel-body .title {
+    text-align: center;
+    margin-top: 0;
+    color: rgb(119, 119, 119);
+}
+
+.tweetfeed-container .panel-heading .panel-title {
+    display: inline-block;
+}
+
+.tweetfeed-container .panel-heading .likes-container {
+    display: inline-block;
+    left: 0px;
+    float: right;
 }
 
 .likes-container .blue {

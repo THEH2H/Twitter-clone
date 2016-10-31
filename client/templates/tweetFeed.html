@@ -2,20 +2,21 @@
     <div class="tweetfeed-container">
         <div class="panel panel-default tweetfeed">
             <div class="panel-body">
+                <h3 class="title">Feed</h3>
                 <!-- Text box for tweet content -->
                 {{#each tweetMessage}}
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">@{{this.user}} 
+                        <h3 class="panel-title">{{this.user}} 
                 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                 {{this.timestamp}}
-               </h3>
+                 {{prettifyDate this.timestamp}}
+               </h3> {{> likes tweetMessage}}
                     </div>
                     <div class="panel-body">
                         {{this.message}}
-                        {{> likes tweetMessage}}
-                        {{> tweetReplies tweetMessage}}
-                        {{> replyBox tweetMessage}}
+                        <div class="well">
+                            {{> tweetReplies tweetMessage}} {{> replyBox tweetMessage}}
+                        </div>
                     </div>
                 </div>
                 {{/each}}

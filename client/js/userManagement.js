@@ -1,11 +1,4 @@
-Template.navBar.onCreated(function() {
-    console.log(Meteor.user());
-    if (Meteor.user()) {
-        this.subscribe('followings', Meteor.user().emails[0].address);
-        this.subscribe('followers', Meteor.user().emails[0].address);
-        this.subscribe('tweets', Meteor.user().emails[0].address);
-    }
-});
+
 
 Template.navBar.helpers({
     'tweets': function() {

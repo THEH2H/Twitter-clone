@@ -3,14 +3,14 @@
         {{#each tweetReply}}
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">@{{this.user}} 
+                <h3 class="panel-title">{{this.user}} 
                 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                 {{this.timestamp}}
+                 {{prettifyDate this.timestamp}}
                </h3>
+                {{> likes tweetReply}}
             </div>
             <div class="panel-body">
-                {{this.message}}
-                {{> likes tweetReply}}
+                {{this.message}} 
             </div>
         </div>
         {{/each}}
