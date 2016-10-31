@@ -94,9 +94,14 @@
     margin-left: 10px;
 }
 
-.likes-container .blue{
+.likes-container .blue {
     color: blue;
 }
-.likes-container .black{
+
+.likes-container .black {
     color: black;
+}
+
+.navbar .badge {
+    padding: 5px 10px;
 }

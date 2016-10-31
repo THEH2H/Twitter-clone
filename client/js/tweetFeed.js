@@ -1,7 +1,7 @@
 Template.tweetFeed.onCreated(function() {
     if (Meteor.user()) {
-        this.subscribe('tweets', Meteor.user().username);
-        this.subscribe('ownTweets', Meteor.user().username);
+        this.subscribe('tweets', Meteor.user().emails[0].address);
+        this.subscribe('ownTweets', Meteor.user().emails[0].address);
     }
 });
 

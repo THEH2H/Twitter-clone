@@ -1,15 +1,16 @@
 Meteor.methods({
-    'findUser': function(username) {
+    'findUser': function(email) {
         return Meteor.users.findOne({
-            username: username
+            'emails.address': email
         }, {
-            fields: { 'username': 1 }
+            fields: { 'emails.address': 1 }
         });
     },
-    'followUser': function(username) {
-        Relationships.insert({
-            follower: Meteor.user().username,
-            following: username
+    'followUser': function(email) {
+         Relationships.insert({
+            follower: Meteor.user().emails[0].address,
+            following: email
         });
+        
     }
 });

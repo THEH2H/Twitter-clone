@@ -10,14 +10,14 @@
                 <!-- Display box found through search-->
                 {{#if foundUser}}
                 <div class="found-user">
-                    <button type="button" class="btn btn-default" id="follow">Follow @{{foundUser.username}}</button>
+                    <button type="button" class="btn btn-default" id="follow">Follow @{{foundUser.emails.[0].address}}</button>
                 </div>
                 {{/if}}
                 <!-- List of people to follow -->
                 <div class="recommend-users">
                     <h5>Who to follow:</h5> {{#each recommendedUsers}}
                     <p>
-                        <button type="button" class="btn btn-default" id="followRec">Follow @{{this.username}}</button>
+                        <button type="button" class="btn btn-default" id="followRec">Follow @{{this.emails.[0].address}}</button>
                     </p>
                     {{/each}}
                 </div>

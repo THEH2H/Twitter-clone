@@ -1,44 +1,32 @@
 <template name="userManagement">
     <div class="user-container">
+        {{#unless currentUser}}
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Welcome to Mini Twitter</h1>
+            </div>
+        </div>
+        <br>
         <div class="panel panel-default userBox">
             <div class="panel-body">
-                {{# if currentUser}}
-                <!-- Message for logged in user -->
-                <p>Hello <strong>@{{currentUser.username}}</strong>, welcome to twitterClone</p>
-                <button type="button" class="btn btn-info fullbutton" id="logout">Log out</button>
-                <table class="table">
-                    <tr>
-                        <td class="tableHeader">Tweets</td>
-                        <td class="tableHeader">Following</td>
-                        <td class="tableHeader">Followers</td>
-                    </tr>
-                    <tr>
-                        <td class="tableContent">{{tweets}}</td>
-                        <td class="tableContent">{{following}}</td>
-                        <td class="tableContent">{{followers}}</td>
-                    </tr>
-                </table>
-                {{else}}
                 <!-- Log in module -->
                 <h4>Sign In</h4>
                 <div class="form-group">
                     <form>
-                        <input class="form-control input-sm" id="login-username" placeholder="Email" type="email" required>
+                        <input class="form-control input-sm" id="login-email" placeholder="Email" type="email" required>
                         <input class="form-control input-sm" id="login-password" placeholder="Password" type="password" required>
                         <button type="submit" class="btn btn-info fullbutton login" id="login">Log in</button>
                     </form>
                 </div>
-                {{/if}}
             </div>
         </div>
-        {{#unless currentUser}}
         <div class="panel panel-default userBox">
             <div class="panel-body">
                 <!-- Sign up module -->
                 <h4>Sign Up</h4>
                 <div class="form-group">
                     <form>
-                        <input class="form-control input-sm" id="signup-username" placeholder="Email" type="email" required>
+                        <input class="form-control input-sm" id="signup-email" placeholder="Email" type="email" required>
                         <input class="form-control input-sm" id="signup-fullname" placeholder="Full Name (Optional)">
                         <input class="form-control input-sm" id="signup-password" placeholder="Password" type="password" required>
                         <button type="submit" class="btn btn-info fullbutton" id="signup">Sign up</button>

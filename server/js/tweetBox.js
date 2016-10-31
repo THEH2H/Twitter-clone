@@ -3,11 +3,9 @@ Meteor.methods({
         if (Meteor.user()) {
             Tweets.insert({
                 message: tweet,
-                user: Meteor.user().username,
+                user: Meteor.user().emails[0].address,
                 timestamp: new Date()
             });
         }
     }
 });
-
-

@@ -1,8 +1,8 @@
-Meteor.publishComposite('tweets', function(username) {
+Meteor.publishComposite('tweets', function(email) {
     return {
         find: function() {
             // Find the current user's following users
-            return Relationships.find({ follower: username });
+            return Relationships.find({ follower: email });
         },
         children: [{
             find: function(relationship) {
@@ -13,25 +13,25 @@ Meteor.publishComposite('tweets', function(username) {
     }
 });
 
-Meteor.publish('ownTweets', function(username) {
-    return Tweets.find({ user: username });
+Meteor.publish('ownTweets', function(email) {
+    return Tweets.find({ user: email });
 });
 
-// List of all usernames
-Meteor.publish('users', function(username) {
+// List of all emails
+Meteor.publish('users', function(email) {
     return Meteor.users.find({}, {
-        fields: { 'username': 1 },
+        fields: { 'emails.address': 1 },
         limit: 100
     });
 });
 
-// List of usernames the current user is following
-Meteor.publish('followings', function(username) {
-    return Relationships.find({ follower: username });
+// List of emails the current user is following
+Meteor.publish('followings', function(email) {
+    return Relationships.find({ follower: email });
 });
 
-Meteor.publish('followers', function(username) {
-    return Relationships.find({ following: username });
+Meteor.publish('followers', function(email) {
+    return Relationships.find({ following: email });
 });
 
 Meteor.publish('replies', function(tweet_id) {
