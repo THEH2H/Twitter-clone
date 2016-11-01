@@ -29,7 +29,6 @@
 	<li>momentjs:moment            2.15.1</li>
 	<li>reactive-var               1.0.11</li>
 	<li>reywood:publish-composite  1.4.2</li>
-	<li>twbs:bootstrap             3.3.6</li>
 </ul>
 
 
