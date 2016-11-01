@@ -1,4 +1,4 @@
-<h3>Mini Twitter Meteor App</h3>
+<h3>Mini Twitter Meteor App</h3> - <p>Built with Meteor/Node.js and MongoDB , used Blaze and bootstrap for templating.</p>
 
 <ul>
 <li>Sign up with email , full name and passowrd</li>
@@ -10,7 +10,7 @@
 <li>Log out</li>
 </ul>
 
-<p>Built with Meteor/Node.js and MongoDB , used Blaze and bootstrap for templating.</p>
+
 
 <p><b>How to run :</b></p>
 
@@ -20,13 +20,24 @@
 	<li>Go to to http://localhost:3000</li>
 </ul>
 
-Packages added :
+<p><b>Packages added :</b></p>
 
-accounts-password          1.3.1  
-accounts-ui                1.1.9  
-email                      1.1.18  
-momentjs:moment            2.15.1* 
-reactive-var               1.0.11  
-reywood:publish-composite  1.4.2  
-twbs:bootstrap             3.3.6  
+<ul>
+	<li>accounts-password          1.3.1</li>
+	<li>accounts-ui                1.1.9</li>
+	<li>email                      1.1.18</li>
+	<li>momentjs:moment            2.15.1*</li>
+	<li>reactive-var               1.0.11</li>
+	<li>reywood:publish-composite  1.4.2</li>
+	<li>twbs:bootstrap             3.3.6</li>
+</ul>
+
+
+  
+  
+ 
+ 
+  
+  
+  
 
